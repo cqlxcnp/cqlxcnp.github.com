@@ -1,103 +1,85 @@
-# Where things are
-source:       .
-destination:  ./_site
-plugins:      ./_plugins
-layouts:      ./_layouts
-paginate:     8
+# # # # # # # # # # # # #
+#   K i k o - p l u s   #
+# # # # # # # # # # # # #
 
-# Handling Reading
-safe:         false
-include:      [".htaccess"]
-exclude:      []
-keep_files:   [".git", ".svn"]
-encoding:     "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-textile_ext:  "textile"
+# Basic
+name:               "Kiko Plus"
 
-# Filtering Content
-show_drafts:  null
-limit_posts:  0
-future:       true
-unpublished:  false
-
-# Conversion
-markdown:     kramdown
-highlighter:  pygments
-lsi:          false
-excerpt_separator: "\n\n"
-
-# Serving
-detach:       false
-port:         4000
-host:         127.0.0.1
-baseurl:      "" # does not include hostname
-
-# Outputting
-permalink:     date
-paginate_path: /page:num
-timezone:      null
-
-
-#站点基础配置
-title: Violet
-subTitle: Just another Jekyll blog.
-description: 这是 PIZn 的又一个博客，它是基于 Jekyll 搭建起来的。在这里，不仅仅是用来快速记录工作，学习，生活的一点一滴的地方，更是 PIZn 对 Jekyll 的学习和使用的一次有意义的实践。
-#url: http://pizn.github.io
-url: http://cqlxcnp.github.io
-feed: /atom.xml
-
-#菜单配置
-nav:
-  - text: 首页
-    url: /index.html
-  - text: 文章归档
-    url: /archives.html
-  - text: 作品
-    url: /works.html
-  - text: 联系我
-    url: http://www.zhanxin.info/contact.html
-  - text: 博客源代码
-    url: https://github.com/pizn/pizn.github.com
-
-#theme config
-themes: /themes/violet
-
-#配置你喜欢的顶部背景图片
-headimg:
-  - item: /themes/violet/images/hdbg01.jpg
-  - item: /themes/violet/images/hdbg02.jpg
-  - item: /themes/violet/images/hdbg03.jpg
-  - item: /themes/violet/images/hdbg04.jpg
-
-#关注我
-follow:
-  - class: fa-google-plus
-    url: http://www.zhanxin.info
-  - class: fa-facebook
-    url: http://www.zhanxin.info
-  - class: fa-github
-    url: http://github.com/pizn
-  - class: fa-weibo
-    url: http://weibo.com/pizner
-  - class: fa-renren
-    url: http://www.zhanxin.info
-  - class: fa-pinterest
-    url: http://www.zhanxin.info
-  - class: fa-twitter
-    url: http://www.zhanxin.info
-  - class: fa-rss
-    url: http://www.zhanxin.info
-
-#作者信息
 author:
-  link: http://www.zhanxin.info/contact.html
-  img: http://tp2.sinaimg.cn/1832671293/180/40020872447/1
+  facebook:         your-id
+  twitter:          your-id
+  github:           your-id
+  linkedin:         your-id
+  medium:           your-id
+  tumblr:           your-id
+  email:            your-id@your-email.com
 
-#评论信息
+copyright:
+  year:             2017
+  name:             Kiko
+
+# Google-analytics
+google-analytics:
+  id:               ""
+
+# Disqus
 disqus:
-  config: true
-  id: piznblog
+  id:               "kiko-plus"
 
-duoshuo:
-  config: false
-  id: zhanxin
+# URL
+url:                "https://AWEEKJ.github.io" # the base hostname & protocol for your site
+# url:                "http://localhost:4000" # use this url when you develop
+baseurl:            "/Kiko-plus" # the subpath of your site, e.g. /blog
+
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           Asia/Seoul
+permalink:          /:year-:month-:day/:title/
+
+# Pagination
+paginate:           5
+paginate_path:      /page:num/
+
+# Markdown
+markdown:           kramdown
+kramdown:
+  input:            GFM
+
+# Navigation
+nav:
+  - name:           "About"
+    url:            "/about"
+  - name:           "Archive"
+    url:            "/archive"
+  - name:           "Tags"
+    url:            "/tags"
+  - name:           "Github"
+    url:            "https://github.com/AWEEKJ/Kiko-plus"
+
+# Sass
+sass:
+  sass_dir:         _sass
+  style:            :compressed
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+
+# jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
+gems:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-admin
+
+exclude:            [vendor]
