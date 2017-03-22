@@ -2,9 +2,6 @@
 layout: default
 title: 程蕲川的博客!
 ---
-
-
-
 <ul class="posts">
 {% for post in site.posts %}
   <li>
@@ -15,3 +12,15 @@ title: 程蕲川的博客!
   <a href="{{ post.url }}">{{ post.title }}</a>{{ post.excerpt }}</li>
 {% endfor %}
 </ul>
+
+
+<!-- 遍历分页后的文章 -->
+{% for post in paginator.posts %}
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}
