@@ -3,7 +3,6 @@ layout: default
 title: 程蕲川的博客!
 ---
 
-
 <div class="main-post-list hidden">
 
   <ol class="post-list">
@@ -25,12 +24,14 @@ title: 程蕲川的博客!
           <div class = "post-list-small-mate">
           <a class="btn-border-small" href={{ post.url }}>阅读全文 » </a>
           </div>
+        </a>
       </div>
       <hr class="post-list__divider" />
     </li>
     {% endfor %}
   </ol>
 
-
+  {% include pagination.html %}
 
 </div>
+
