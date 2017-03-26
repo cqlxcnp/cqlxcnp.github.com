@@ -6,7 +6,7 @@ title: 程蕲川的博客!
 <div class="main-post-list hidden">
 
   <ol class="post-list">
-
+  	{% for post in site.posts %}
     <li>
       <h1 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h1>
       <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
