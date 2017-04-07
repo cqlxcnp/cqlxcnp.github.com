@@ -23,6 +23,15 @@
 		var root = document.getElementsByTagName('html')[0];
 		root.setAttribute('class', 'ff');
 	};
+
+	//友情链接
+	function friendlyLink(){
+		setTimeout(function(){
+			location.href="index.html";
+		}, 2000 )
+	}
+
+
 	</script>
 </head>
 
@@ -72,7 +81,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card" onclick="location='index.html'">
+				<div class="card" onclick="friendlyLink()">
 					<div class="card__container card__container--closed">
 						<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
 							<defs>
@@ -85,12 +94,12 @@
 						<div class="card__content">
 							<i class="card__btn-close fa fa-times"></i>
 							<div class="card__caption">
-								<h2 class="card__title">收录站点</h2>
+								<h2 class="card__title">友情链接</h2>
 								<p class="card__subtitle">Learn the thoughts of others</p>
 							</div>
 							<div class="card__copy">
 								<div class="meta">
-									
+									<p><a href="blog.html"><center>未跳转请点击</center></a></p>
 								</div>
 								<p></p>
 							</div>
