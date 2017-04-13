@@ -5,19 +5,254 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="plugins/jquery-1.12.0.min.js"></script>
 	<title>友情链接</title>
 	<meta name="keywords" content="cqlxcnp blog 博客 " />
 	<meta name="author" content="cqlxcnp" />
 	<link rel="bookmark" href="/favicon.ico"/>
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="favicon.ico"/>
+
+<script>
+	$(function(){
+  var canvas = document.querySelector('canvas'),
+      ctx = canvas.getContext('2d')
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.lineWidth = .3;
+  ctx.strokeStyle = (new Color(150)).style;
+
+  var mousePosition = {
+    x: 30 * canvas.width / 100,
+    y: 30 * canvas.height / 100
+  };
+
+  var dots = {
+    nb: 750,
+    distance: 50,
+    d_radius: 100,
+    array: []
+  };
+
+  function colorValue(min) {
+    return Math.floor(Math.random() * 255 + min);
+  }
+
+  function createColorStyle(r,g,b) {
+    return 'rgba(' + r + ',' + g + ',' + b + ', 0.8)';
+  }
+
+  function mixComponents(comp1, weight1, comp2, weight2) {
+    return (comp1 * weight1 + comp2 * weight2) / (weight1 + weight2);
+  }
+
+  function averageColorStyles(dot1, dot2) {
+    var color1 = dot1.color,
+        color2 = dot2.color;
+
+    var r = mixComponents(color1.r, dot1.radius, color2.r, dot2.radius),
+        g = mixComponents(color1.g, dot1.radius, color2.g, dot2.radius),
+        b = mixComponents(color1.b, dot1.radius, color2.b, dot2.radius);
+    return createColorStyle(Math.floor(r), Math.floor(g), Math.floor(b));
+  }
+
+  function Color(min) {
+    min = min || 0;
+    this.r = colorValue(min);
+    this.g = colorValue(min);
+    this.b = colorValue(min);
+    this.style = createColorStyle(this.r, this.g, this.b);
+  }
+
+  function Dot(){
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+
+    this.vx = -.5 + Math.random();
+    this.vy = -.5 + Math.random();
+
+    this.radius = Math.random() * 2;
+
+    this.color = new Color();
+    console.log(this);
+  }
+
+  Dot.prototype = {
+    draw: function(){
+      ctx.beginPath();
+      ctx.fillStyle = this.color.style;
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      ctx.fill();
+    }
+  };
+
+  function createDots(){
+    for(i = 0; i < dots.nb; i++){
+      dots.array.push(new Dot());
+    }
+  }
+
+  function moveDots() {
+    for(i = 0; i < dots.nb; i++){
+
+      var dot = dots.array[i];
+
+      if(dot.y < 0 || dot.y > canvas.height){
+        dot.vx = dot.vx;
+        dot.vy = - dot.vy;
+      }
+      else if(dot.x < 0 || dot.x > canvas.width){
+        dot.vx = - dot.vx;
+        dot.vy = dot.vy;
+      }
+      dot.x += dot.vx;
+      dot.y += dot.vy;
+    }
+  }
+
+  function connectDots() {
+    for(i = 0; i < dots.nb; i++){
+      for(j = 0; j < dots.nb; j++){
+        i_dot = dots.array[i];
+        j_dot = dots.array[j];
+
+        if((i_dot.x - j_dot.x) < dots.distance && (i_dot.y - j_dot.y) < dots.distance && (i_dot.x - j_dot.x) > - dots.distance && (i_dot.y - j_dot.y) > - dots.distance){
+          if((i_dot.x - mousePosition.x) < dots.d_radius && (i_dot.y - mousePosition.y) < dots.d_radius && (i_dot.x - mousePosition.x) > - dots.d_radius && (i_dot.y - mousePosition.y) > - dots.d_radius){
+            ctx.beginPath();
+            ctx.strokeStyle = averageColorStyles(i_dot, j_dot);
+            ctx.moveTo(i_dot.x, i_dot.y);
+            ctx.lineTo(j_dot.x, j_dot.y);
+            ctx.stroke();
+            ctx.closePath();
+          }
+        }
+      }
+    }
+  }
+
+  function drawDots() {
+    for(i = 0; i < dots.nb; i++){
+      var dot = dots.array[i];
+      dot.draw();
+    }
+  }
+
+  function animateDots() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    moveDots();
+    connectDots();
+    drawDots();
+
+    requestAnimationFrame(animateDots);
+  }
+
+  $('canvas').on('mousemove', function(e){
+    mousePosition.x = e.pageX;
+    mousePosition.y = e.pageY;
+  });
+
+  $('canvas').on('mouseleave', function(e){
+    mousePosition.x = canvas.width / 2;
+    mousePosition.y = canvas.height / 2;
+  });
+
+  createDots();
+  requestAnimationFrame(animateDots);
+});
+
+
 
 
 
 	</script>
+
+<style>
+/*粒子效果*/
+html, body { margin: 0; padding:0;text-align:center}
+.bg{position:fixed;top:0;left:0;right:0;bottom:0;background:#FFFFFF url(login.png) center center no-repeat;background-size:cover}
+.core{width:453px;height:100%;position:relative;}
+.loginBox{width:100%;height:414px;background-color:rgba(255,255,255,0.7);border:1px solid #d4dae6;box-shadow:0px 0px 100px #213a6d;position:absolute;top:325px;border-radius:8px;}
+input{display:block;padding:23px 20px 23px 20px;width:358px;height:18px;border:1px solid #b1b3b8;font-size:18px;font-family:'微软雅黑';position:relative;border-radius:4px;}
+.account{top:30px;}
+.pwd{top:50px;}
+button{display:block;width:398px;height:64px;border:1px solid #a9adb6;font-size:18px;font-family:'微软雅黑';position:relative;top:170px;border-radius:4px;line-height:64px;background-color:#355898;color:#ffffff;cursor:pointer}
+.copyright{position:absolute;top:843px;width:100%;height:auto;}
+canvas { width: 100%; height: 100%; position: absolute; top:0px;left:0px;}
+
+/* Demo Buttons Style */
+.codrops-demos {
+	font-size: 0.8em;
+	text-align:center;
+	position:absolute;
+	z-index:99;
+	width:96%;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 0.35em 0.1em;
+	padding: 0.5em 1.2em;
+	outline: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	border-radius: 2px;
+	font-size: 110%;
+	border: 2px solid transparent;
+	color:#fff;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo {
+	border-color: #383a3c;
+}
+
+
+
+.centerDiv{margin:0 auto}
+</style>
 </head>
 
 <body>
-	<div>友情链接</div>
+<div class="bg" align="center">
+	<canvas id="can"></canvas>
+	<!--头部-->
+	<div class="centerDiv" style="color:#3D74AC"><h1>友情链接</h1></div>
+	<!--中间部分-->
+	<div>
+			<div>博客</div>
+			<div>
+				thepiratebay.org
+				海盗湾
+
+				www.dreamhost.com
+				空间服务商
+
+				duoshuo.com
+				多说
+
+
+				博客类
+				http://cellier.me/
+
+
+				冯大辉的个人博客
+				http://dbanotes.net/
+
+				轮子哥
+				http://www.cppblog.com/vczh/
+
+				博客http://www.wandounet.com/
+				相关博客
+				http://9leg.com/
+				http://droidyue.com/
+				https://www.panxw.com/
+				http://robotkang.cc/
+				http://codewu.com/
+			</div>
+
+	</div>
+</div>
 </body>
 
 </html>
