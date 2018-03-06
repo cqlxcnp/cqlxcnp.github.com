@@ -21,6 +21,6 @@ key: page-about
 
 ## Some Links | 相关链接
 
-<a href="tianqi.name">田琦的个人网站</a>
-<a href="www.ruanyifeng.com">阮一峰的个人网站</a>
+<a href="tianqi.name">田琦的个人网站</a>   
 
+<a href="www.ruanyifeng.com">阮一峰的个人网站</a>   
