@@ -12,7 +12,7 @@
 #    `--'   `----''--'   '--' `--'
 
 #eg: default | dark | forest | ocean | chocolate | orange
-text_color_theme: dark
+text_color_theme: default
 ## Base settings ##
 url: https://www.cqlxcnp.com #the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: /blog
