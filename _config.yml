@@ -13,9 +13,15 @@
 
 text_color_theme: dark #eg: default | dark | forest | ocean | chocolate | orange
 ## Base settings ##
+<<<<<<< HEAD
 url: https://www.cqlxcnp.com #the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: /blog
 title: cqlxcnp blog
+=======
+# url:  #the base hostname & protocol for your site e.g. https://www.someone.com
+baseurl: 
+title: cqlxcnp's blog
+>>>>>>> 8cda6e6b0b089531811c791d8acd20cfc29af106
 description: > #this means to ignore newlines until "nav_lists:"
   cqlxcnp Blog
 
