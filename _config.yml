@@ -11,14 +11,13 @@
 #    |  |  \   --. /  .'.  \  |  |
 #    `--'   `----''--'   '--' `--'
 
-#eg: default | dark | forest | ocean | chocolate | orange
-text_color_theme: default
+text_color_theme: default #eg: default | dark | forest | ocean | chocolate | orange
 ## Base settings ##
-url: https://www.cqlxcnp.com #the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl: /blog
-title: cqlxcnp blog
+# url:  #the base hostname & protocol for your site e.g. https://www.someone.com
+baseurl: /
+title: Someone's blog
 description: > #this means to ignore newlines until "nav_lists:"
-  cqlxcnp Blog
+  Someone's Blog
 
 nav_lists:
   - titles:
@@ -28,9 +27,9 @@ nav_lists:
       zh-Hant: 關於
     url: /about.html
 
- paths:
-  base: /
-  home: https://www.cqlxcnp.com
+# paths:
+#   base: /
+#   home: /
 #   all:  /all.html
 #   rss:  /feed.xml
 
@@ -39,17 +38,17 @@ nav_lists:
 # repository_tree:  #e.g. master
 
 ## Language & timezone ##
-lang: zh #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
+lang: en #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
 timezone: Asia/Shanghai #see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
 ## Author & social ##
 author:
-  name: cqlxcnp
-  email: cqlxcnp@163.com  #your Email address e.g. someone@site.com
+  name: Someone
+  # email:  #your Email address e.g. someone@site.com
   # facebook:  #your Facebook username
   # twitter:  #your Twitter username
-  github: cqlxcnp  #your GitHub username
-  googleplus: cqlxcnp #your Google+ username
+  # github:  #your GitHub username
+  # googleplus:  #your Google+ username
   # weibo:  #your Weibo username
   # douban:  #your Douban username
   # linkedin:  #your Linkedin username
@@ -81,10 +80,10 @@ leancloud:
   # app_key:  #LeanCloud App key
   # app_class:  #LeanCloud App class
 
- mathjax: true
- mathjax_autoNumber: true
- mermaid: true
- chart: true
+# mathjax: true
+# mathjax_autoNumber: true
+# mermaid: true
+# chart: true
 
 ## Paginate ##
 paginate: 7
