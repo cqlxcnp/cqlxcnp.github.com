@@ -1,1 +1,1 @@
-Write every day
+1000 words a day
