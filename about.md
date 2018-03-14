@@ -20,4 +20,7 @@ key: page-about
 
 <a href="http://tianqi.name" target="_Blank">田琦的个人网站</a>   
 
-<a href="http://www.ruanyifeng.com" target="_Blank">阮一峰的个人网站</a>   
+<a href="http://www.ruanyifeng.com" target="_Blank">阮一峰的个人网站</a>  
+
+<a href="http://764350177.lofter.com/" target="_Blank">三千院雨</a>
+
