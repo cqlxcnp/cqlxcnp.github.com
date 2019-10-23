@@ -15,9 +15,9 @@ text_color_theme: dark #eg: default | dark | forest | ocean | chocolate | orange
 ## Base settings ##
 # url:  #the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: /
-title: cqlxcnp 备忘录
+title: 浮生一程
 description: > #this means to ignore newlines until "nav_lists:"
-  cqlxcnp 备忘录
+  浮生一程
 
 nav_lists:
   - titles:
@@ -44,16 +44,16 @@ timezone: Asia/Shanghai #see https://en.wikipedia.org/wiki/List_of_tz_database_t
 ## Author & social ##
 author:
   name: cqlxcnp
-  email: cqlxcnp@163.com  #your Email address e.g. someone@site.com
+  email: cqlxcnp@gmail.com  #your Email address e.g. someone@site.com
   # facebook:  #your Facebook username
   # twitter:  #your Twitter username
   github: cqlxcnp #your GitHub username
   googleplus: cqlxcnp #your Google+ username
-  weibo: u/5225704734 #your Weibo username
+  #weibo: u/5225704734 #your Weibo username
   # douban:  #your Douban username
   # linkedin:  #your Linkedin username
   qq: 1193162264 
-  zhihu: cqlxcnp
+  #zhihu: cqlxcnp
 
 ## TOC
 toc:
