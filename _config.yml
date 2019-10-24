@@ -17,11 +17,12 @@ text_color_theme: dark #eg: default | dark | forest | ocean | chocolate | orange
 baseurl: /
 title: 浮生一程
 description: > #this means to ignore newlines until "nav_lists:"
-  浮生一程
+  浮生一程的博客
 keywords: > 
     浮生一程
     cqlxcnp
     程蕲川
+    博客
 nav_lists:
   - titles:
       en: About
