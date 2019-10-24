@@ -18,7 +18,10 @@ baseurl: /
 title: 浮生一程
 description: > #this means to ignore newlines until "nav_lists:"
   浮生一程
-
+keywords: > 
+    浮生一程
+    cqlxcnp
+    程蕲川
 nav_lists:
   - titles:
       en: About
